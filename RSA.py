@@ -28,7 +28,6 @@ def create_keys():
     while phi_N%E == 0 or D is None:  
         E = randrange(1,phi_N-1)
         D = modular_inverse(E,phi_N)
-    print(D)
     print("Sending them as files ....")    
     with open("decrypt"+str(getrandbits(10))+".txt","w+") as f:
         f.write(",".join([str(D),str(N)]))
@@ -97,4 +96,3 @@ def decrypt(content,priv_key=None):
     return new_content
 
 # print(decrypt(encrypt("hello world I study at BMSCE and I like programming!!!","encrypt13.txt"),"decrypt663.txt"))
-# print(decrypt("jgcafhihciahhihcagefbgihdcagfdaifigajhcjbfahdfjfifiibgaeedceeffcagacaibjghii","decrypt663.txt"))

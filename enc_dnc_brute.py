@@ -43,16 +43,18 @@ class Task():
         content = decrypt(content, self.key)
         with open(file_name,"w+") as f: f.write(content)
         self.reset()
-
-
-if __name__ == "__main__":
-        print("-----Brute Force Test Task----")
-        if len(sys.argv) < 2 : 
-            print("Enter document and key location") 
-            exit()
-        op = input("Enter operation encrypt/decrypt : ")
-        brute_task = Task(task_name = op ,key = sys.argv[-1])
-        for name in sys.argv[1:-1]:  
-            brute_task.file_loc = name  
-            brute_task.start(input("Enter output file name : "))
-            brute_task.display()        
+   
+def exec():
+    """
+    a prompt for encrypting and decrypting from a file and when key is supplied
+    """
+    print("-----Brute Force Test Task----")
+    if len(sys.argv) < 2 : 
+        print("Enter document and key location") 
+        exit()
+    op = input("Enter operation encrypt/decrypt : ")
+    brute_task = Task(task_name = op ,key = sys.argv[-1])
+    for name in sys.argv[1:-1]:  
+        brute_task.file_loc = name  
+        brute_task.start(input("Enter output file name : "))
+        brute_task.display()        

@@ -1,5 +1,6 @@
 from enc_dnc_brute import *
 
+# Still should be developed, it's giving a lot of bugs
 class Task_Breaker(Task):
     def __init__(self, file_loc=None, task_name=None, key=None, out_file = None):
         super().__init__(file_loc=file_loc, task_name=task_name, key=key)
